@@ -65,7 +65,7 @@ header.scroll img{
     height: 100vh;
     display: flex;
     align-items: flex-end;
-    background-image: url('images/banner.png');
+    background-image: url('images/new_banner.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -75,8 +75,9 @@ header.scroll img{
 
 }
 .banner-content{
-    padding-left: 17%;
+    padding-left: 10%;
     width: 100%;
+    margin-bottom: 30px;
 }
 .banner span{
     display: block;
@@ -86,7 +87,7 @@ header.scroll img{
     margin: 0;
     font-weight: 100;
     font-size: 15px;
-    filter: blur(1px);
+    /* filter: blur(1px); */
 }
 .banner-title span:nth-child(2){
     margin-left: 44px ;
@@ -100,7 +101,7 @@ header.scroll img{
     font-size: 4.2vw;
     line-height: 4.5vw;
     font-family: 'PPFormula', sans-serif;
-    filter: blur(3px);
+    /* filter: blur(3px); */
 }
 
 .banner-heading span:first-child{
