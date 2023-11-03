@@ -25,10 +25,17 @@ $(document).ready(function(){
             slidesToScroll: 1,
             arrows: false,
             slide: '.use-cases-slide',
-            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToShow: 5,
             centerMode: true,
             centerPadding: '60px',
             responsive: [{
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },{
                 breakpoint: 840,
                 settings: {
                     slidesToShow: 2,

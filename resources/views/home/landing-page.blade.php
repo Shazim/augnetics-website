@@ -45,26 +45,26 @@
             <div class="flex">
                 <div  class="about-content">
                     <div class="about-content-container">
-                        <h2>
-                            <span data-aos="fade-right">About</span>
-                            <span data-aos="fade-left">AUGnetics</span>
-                        </h2>
+                        <h3>
+                          About Augnetics
+                        </h3>
                         <p data-aos="fade-up">
                             Augnetics is a technology company based in DIFC Innovation Hub, Dubai which has developed a unique platform for Augmented Reality (AR) applications. The aim is to create infrastructure where different businesses and segments can take advantage of. Instead of adding value we aim to value amplify, we want to take what is already there and improve upon it using AR and our proprietary analytical tools. Our main USP with our platform is the user-friendly cloud-based AR experience streaming and tools to maintain rich engagement with the final user, while creating a sustainable business model for the businesses using our platform.
                         </p>
                         <div data-aos="fade-right" data-aos-duration="1000">
-                            <img src="{{ asset('public/assets/images/about-bottom.png') }}"/>
+                            <img src="{{ asset('public/assets/images/about-2.jpg') }}"/>
                         </div>
                     </div>
 
 
                 </div>
                 <div  class="about-img flex" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="{{ asset('public/assets/images/about.png') }}"/>
+                    <img src="{{ asset('public/assets/images/about.jpg') }}"/>
                 </div>
             </div>
         </section>
         <section class="services">
+            <div class="services-container">
             <h3 data-aos="fade-up">SERVICES</h3>
             <div id="accordion" class="accordion">
                 <div class="accordion-item" data-aos="fade-up">
@@ -92,12 +92,14 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         <section class="use-cases">
             <div class="use-cases-img" data-aos="fade-up">
-                <img src="{{ asset('public/assets/images/slide.png') }}">
+                <img src="{{ asset('public/assets/images/use-case.jpg') }}">
             </div>
-            <h3 data-aos="fade-up">USE CASES</h3>
+            <div class="wrapper">
+            <h3 data-aos="fade-up" >USE CASES</h3>
 
             <div class="use-cases-slider" id="cases" data-aos="fade-up">
                 <div class="use-cases-slide">
@@ -107,16 +109,16 @@
                 <div class="use-cases-slide"> <span>Retail</span> </div>
                 <div class="use-cases-slide"> <span>Entertainment</span></div>
             </div>
-
+</div>
         </section>
-        <section class="contact-us" id="contactUs">
+        <section class="contact-us wrapper" id="contactUs">
             <div class="contact-us-container flex">
                 <div class="contact-us-img" data-aos="fade-right">
                     <div class="contact-img"></div>
                 </div>
                 <form action="{{ route('home.contact-us') }}" method="post" class="contact-us-form" data-aos="fade-left">
                     @csrf
-                    <h3>To know more please fill this form so we can <br>share more details</h3>
+                    <h3>To know more please fill this form so we can share more details</h3>
                     @if(session()->has('success_message'))
                         <div class="alert alert-success">
                             <script> document.getElementById('contactUs').scrollIntoView({ behavior: 'smooth', block: "start", inline: "nearest" }); </script>
@@ -180,7 +182,7 @@
 
     </main>
     <footer>
-        <div class="flex footer-container" >
+        <div class="flex footer-container wrapper" >
             <div class="footer-left">
                 <h4>FIND US</h4>
                 <address>
