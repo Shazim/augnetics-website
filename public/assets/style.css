@@ -90,7 +90,10 @@ header.scroll img{
     height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url('images/new_banner.jpg');
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ), url('images/new_banner.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -109,7 +112,7 @@ header.scroll img{
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .banner span{
     display: block;
@@ -176,7 +179,8 @@ header.scroll img{
 }
 .about-img img{
     width: 100%;
-    height: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
 .about-content h3{
@@ -186,10 +190,10 @@ header.scroll img{
     line-height: 5.5rem;
     font-weight: 500;
    
-    /* display: inline-flex;
+    display: inline-flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start; */
+    /* align-items: flex-end; */
+    justify-content: flex-start;
     
     margin: 10% 0 0 22%;
 
@@ -197,26 +201,32 @@ header.scroll img{
 
 .about-content p{
    
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-align: justify;
     font-weight: 100;
     margin-left: 22%;
     margin-bottom: 0;
-    line-height: 2.5rem;
+    line-height: 2.1rem;
     font-family: 'Matter-Regular', sans-serif;
 
 }
 
 .about-content img{
-    transform: translateY(-22px);
-width: 150px;
-height: 150px;
-object-fit: contain;
+    /* transform: translateY(-22px); */
+    transform: translate(-50px, 50px);
+    border-radius: 20px;
+    width: 300px;
+    /* height: 150px; */
+    object-fit: contain;
 }
 
 .about-img {
     justify-content: end;
     align-items: flex-start;
+}
+
+.about-img img {
+    border-radius: 20px;
 }
 
 .services{
@@ -303,6 +313,8 @@ object-fit: contain;
 
 .use-cases-img img{
     width: 100%;
+    height: 600px;
+    object-fit: cover;
 }
 
 .use-cases h3{

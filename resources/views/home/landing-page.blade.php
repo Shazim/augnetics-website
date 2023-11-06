@@ -46,7 +46,8 @@
                 <div  class="about-content">
                     <div class="about-content-container">
                         <h3>
-                          About Augnetics
+                            <span data-aos="fade-right" class="aos-init aos-animate">About</span>
+                            <span data-aos="fade-left" class="aos-init aos-animate">AUGnetics</span>
                         </h3>
                         <p data-aos="fade-up">
                             Augnetics is a technology company based in DIFC Innovation Hub, Dubai which has developed a unique platform for Augmented Reality (AR) applications. The aim is to create infrastructure where different businesses and segments can take advantage of. Instead of adding value we aim to value amplify, we want to take what is already there and improve upon it using AR and our proprietary analytical tools. Our main USP with our platform is the user-friendly cloud-based AR experience streaming and tools to maintain rich engagement with the final user, while creating a sustainable business model for the businesses using our platform.
