@@ -27,18 +27,14 @@ $(document).ready(function(){
             slide: '.use-cases-slide',
             autoplay: true,
             autoplaySpeed: 2000,
-            slidesToShow: 5,
-            centerMode: true,
-            centerPadding: '60px',
+            slidesToShow: 1,
+            
+            //  centerMode: true,
+            // centerPadding: '60px',
             responsive: [{
                 breakpoint: 1440,
                 settings: {
-                    slidesToShow: 3,
-                }
-            },{
-                breakpoint: 840,
-                settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                 }
             }]
         });

@@ -61,6 +61,7 @@ header {
     height: 145px;
     background-color: transparent;
     transition: all .7s ease-in-out;
+    
 }
 .header-container{
     width: 100%;
@@ -69,6 +70,7 @@ header img {
     max-width: 450px;
     width: 70%;
     transition: all .7s ease-in-out;
+    overflow: hidden;
     @media screen and (max-width: 1366px) {
         width: 280px;
         height: 70px;
@@ -85,7 +87,7 @@ header.scroll img{
 
 .banner {
     width: 100%;
-    
+    overflow: hidden;
     min-height: 500px;
     height: 100vh;
     display: flex;
@@ -162,6 +164,8 @@ header.scroll img{
     max-width: 1440px;
     margin: 0 auto;
     padding: 60px  0;
+    width: 100%;
+    overflow: hidden;
    
 }
 
@@ -213,7 +217,7 @@ header.scroll img{
 
 .about-content img{
     /* transform: translateY(-22px); */
-    transform: translate(-50px, 50px);
+    transform: translate(0px, 50px);
     border-radius: 20px;
     width: 300px;
     /* height: 150px; */
@@ -309,8 +313,25 @@ header.scroll img{
 .wrapper{
     max-width: 1440px;
     margin: 0 auto;
+    
 }
-
+.use-case-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.use-case-para{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    text-align: justify;
+    margin-top: 20px;
+}
 .use-cases-img img{
     width: 100%;
     height: 600px;
@@ -333,16 +354,21 @@ header.scroll img{
 }
 
 .use-cases-slider .use-cases-slide{
+  width: 100%;
     display: flex;
     text-align: center;
     padding: 30px 0;
+    justify-content: center;
+    
 }
 
-.use-cases-slider .use-cases-slide span{
-    display: inline-flex;
+.use-cases-slider .use-cases-slide div{
+    display: flex;
+    /* margin-left: 20px; */
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    min-width: 150px;
+   min-width: 150px;
     padding-top: 5px;
     height: 50px;
     border: 1px solid #a6a6a6;
@@ -357,7 +383,7 @@ header.scroll img{
     padding-left: 0px!important; // half partial
 }
 
-.use-cases-slider .use-cases-slide.slick-current span{
+.use-cases-slider .use-cases-slide.slick-current div{
     transform: scale(1.2);
     border-color: #000000;
     color: #000000;
@@ -367,7 +393,10 @@ header.scroll img{
     padding: 30px 60px 60px;
 }
 
-.contact-us-container{}
+.contact-us-container{
+width: 100%;
+overflow: hidden;    
+}
 
 .contact-us-img,
 .contact-us-form{
@@ -394,7 +423,7 @@ header.scroll img{
 }
 
 input, textarea{
-    width: calc(100% - 40px);
+    width: calc(100% - 45px);
     height: 45px;
     border-radius: 5px;
     border: 1px solid #a6a6a6;
@@ -557,10 +586,10 @@ footer a:hover{
 @media only screen and (max-width: 1150px) {
     .banner-title,
     .banner-based{
-        filter: blur(0.5px);
+        /* filter: blur(0.5px); */
     }
     .banner-heading {
-        filter: blur(2px);
+        /* filter: blur(2px); */
     }
 
     /* .use-cases-slider .use-cases-slide span{
@@ -570,6 +599,7 @@ footer a:hover{
     } */
     .about-content img {
         width: 120px;
+        transform: translate(0px, 50px);
     }
 }
 
@@ -603,22 +633,50 @@ footer a:hover{
     header img {
         max-width: 300px;
     }
+  
     .banner-content {
-        padding-left: 10%;
+        padding-left: 4%;
     }
     .banner-title,
     .banner-based{
         font-size: 14px;
+
     }
     .banner-heading {
-        filter: blur(1px);
+        /* filter: blur(1px); */
+    }
+    .banner-heading span:first-child{
+        margin-left: 10vw;
+    }
+    .banner-heading span:nth-child(2){
+        margin-left: 23.8vw;
+    }
+    .banner-heading span:nth-child(3){
+        margin-left: 50vw;
     }
 
     .about {
         padding: 30px 0;
     }
     .about-content-container {
-        padding-left: 20px;
+        padding-left: 40px;
+        padding-right:40px;
+    }
+    .about-content h3 {
+        margin: 0px;
+        margin-bottom: 20px;
+        flex-direction: row;
+    
+    }
+    .about-content h3 span:nth-child(2){
+        margin-left: 15px;
+    }
+    .about-content img {
+        display: none;
+    }
+    .about-content p {
+        margin: 0px;
+        margin-bottom: 40px;
     }
     .about .flex{
         flex-direction: column;
@@ -659,10 +717,12 @@ footer a:hover{
     .contact-us-container{
         flex-direction: column;
         align-items: center;
+        /* overflow: hidden; */
     }
     .contact-us-img,
     .contact-us-form {
         width: 100%;
+        overflow: hidden;
     }
     .contact-us-img{
         max-width: 400px;
@@ -687,16 +747,29 @@ footer a:hover{
 }
 
 @media only screen and (max-width: 600px) {
+    header{
+        width: 100%;
+        overflow:hidden ;
+    }
+    .banner-title{
+        margin-bottom: 30px;
+    }
     .banner-heading {
         font-size: 24px;
         line-height: 24px;
+    }
+    .banner-heading span:nth-child(3){
+        margin-left: 48vw;
+    }
+    .banner-based{
+        margin: 5% 0px 8% 55%;
     }
     .about-content h2 {
         font-size: 24px;
     }
     .about-content p {
         font-size: 14px;
-        margin-left: 20%;
+        /* margin-left: 20%; */
         padding-right: 10px;
     }
     .about-content img {
@@ -704,6 +777,9 @@ footer a:hover{
     }
     .accordion-title:after {
         top: 9px;
+    }
+    .contact-img{
+        width: 100%;
     }
     .accordion-content p {
         margin: 0 0 0 10px;
@@ -714,9 +790,22 @@ footer a:hover{
         margin: 30px 0 30px 0;
     }
     .use-cases-slider .use-cases-slide span {
-        font-size: 18px;
-        min-width: 160px;
-        height: 50px;
+        font-size: 14px;
+        min-width: 130px;
+        height: 40px;
+    }
+    .contact-us-img,
+    .contact-us-form {
+        width: 90%;
+        overflow: hidden;
+    }
+    .contact-us-img{
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+    .contact-img{
+        max-width: 350px;
+        padding-top: 100%;
     }
 
     .footer-container{
@@ -759,4 +848,30 @@ footer a:hover{
     background-color: #4f4784;
     border-radius: 10px; /* Set the color of the track (the non-draggable part) */
   }
-  
+  @media only screen and (max-width:425px) {
+    .accordion-title {
+        font-size: 16px;
+    }
+  }
+  @media only screen and (max-width: 320px){
+    .banner-heading {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .banner-title, .banner-based {
+        font-size: 12px;
+    }
+    .about-content h3{
+        flex-direction: column;
+    }
+    .about-content h3 span:nth-child(2){
+        margin-left: 0px;
+    }
+    .about-content-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .accordion-title {
+        font-size: 16px;
+    }
+  }
