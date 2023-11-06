@@ -154,6 +154,9 @@ header.scroll img{
 
 .banner-based{
     margin: 5% 20px 8% 70%;
+    @media (max-height: 700px) {
+        margin: 5% 20px 3% 70%;
+       }
 }
 
 .banner-based span:last-child{
