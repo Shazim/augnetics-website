@@ -2,8 +2,36 @@ $(document).ready(function(){
     const $header = $('#header');
     const $accordion = $('#accordion');
     const $cases = $('#cases');
-
-
+    $cases.on('init', function(event, slick){
+        const slideContents = document.querySelectorAll('.slide-content');
+        
+            
+            slideContents.forEach(function(content) {
+              content.style.display = 'none';
+            });
+            const currentContent = document.getElementById('slide-content-1' );
+            if (currentContent) {
+              currentContent.style.display = 'block';
+            }
+    });
+    $cases.on('afterChange', function(event, slick, currentSlide){
+   
+        showSlideContent(currentSlide);
+      });
+      function showSlideContent(slideIndex) {
+        
+        const slideContents = document.querySelectorAll('.slide-content');
+      
+            
+            slideContents.forEach(function(content) {
+              content.style.display = 'none';
+            });
+      
+        const currentContent = document.getElementById('slide-content-' + (slideIndex + 1));
+        if (currentContent) {
+          currentContent.style.display = 'block';
+        }
+      }
     // Accordion
     if($accordion.length){
         $accordion.find(".accordion-title").click(function(){
@@ -25,16 +53,42 @@ $(document).ready(function(){
             slidesToScroll: 1,
             arrows: false,
             slide: '.use-cases-slide',
-            slidesToShow: 3,
-            centerMode: true,
-            centerPadding: '60px',
+            // autoplay: true,
+            // autoplaySpeed: 2000,
+            slidesToShow: 4,
+            centerMode: true, // Enable center mode
+            centerPadding: '0', 
+            //  centerMode: true,
+            // centerPadding: '60px',
             responsive: [{
-                breakpoint: 840,
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
                 }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                }
             }]
         });
+        $('.use-cases-slide').on('click', function() {
+            var slideIndex = $(this).data('slide-index');
+            $cases.slick('slickGoTo', slideIndex);
+          });
     }
 
 
@@ -58,4 +112,170 @@ $(document).ready(function(){
         $header.addClass('scroll'):
         $header.removeClass('scroll');
     })
+});
+const bioQuestions = [
+    {
+        question: "What is the capital of France?",
+        choices: ["London", "Madrid", "Paris", "Berlin"],
+        correctAnswer: "Paris"
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        choices: ["Mars", "Venus", "Jupiter", "Saturn"],
+        correctAnswer: "Mars"
+    },
+    {
+        question: "What is 2 + 2?",
+        choices: ["3", "4", "5", "6"],
+        correctAnswer: "4"
+    }
+];
+
+const personalQuestions = [
+    {
+        question: "What is your favorite color?",
+        choices: ["Red", "Blue", "Green", "Yellow"],
+        correctAnswer: "" // Add user-specific correct answer here
+    },
+    {
+        question: "What is your favorite animal?",
+        choices: ["Dog", "Cat", "Bird", "Fish"],
+        correctAnswer: "" // Add user-specific correct answer here
+    },
+    {
+        question: "What is your hometown?",
+        choices: ["New York", "Los Angeles", "Chicago", "Other"],
+        correctAnswer: "" // Add user-specific correct answer here
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let startTime;
+let answers = [];
+let chosenQuiz = '';
+
+function chooseQuiz(quizType) {
+    chosenQuiz = quizType;
+    const container=document.querySelectorAll('.quiz-container')
+    container.forEach(function(content) {
+        content.style.display = 'none';
+      });
+      
+    document.querySelector('#quiz-container').style.display = 'block';
+
+    if (quizType === 'bio') {
+        loadQuestion(bioQuestions);
+    } else if (quizType === 'personal') {
+        loadQuestion(personalQuestions);
+    }
+}
+
+function loadQuestion(questions) {
+    const questionElement = document.getElementById("question");
+    const choicesElement = document.getElementById("choices");
+    const submit=document.getElementById("submit").style.display="block"
+    questionElement.textContent = questions[currentQuestion].question;
+    choicesElement.innerHTML = "";
+
+    questions[currentQuestion].choices.forEach((choice, index) => {
+        const label = document.createElement("label");
+        label.innerHTML = `
+            <input type="radio" name="choice" value="${choice}">
+            ${choice}
+        `;
+        choicesElement.appendChild(label);
+    });
+
+    startTime = new Date(); // Start the timer
+}
+
+function checkAnswer() {
+    const selectedChoice = document.querySelector('input[name="choice"]:checked');
+
+    if (selectedChoice) {
+        const userAnswer = selectedChoice.value;
+        if (userAnswer === getCurrentCorrectAnswer()) {
+            score++;
+        }
+
+        const endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000; // Calculate time in seconds
+
+        answers.push({ 
+            question: getCurrentQuestion(),
+            userAnswer,
+            correctAnswer: getCurrentCorrectAnswer(),
+            timeTaken
+        });
+
+        currentQuestion++;
+        if (currentQuestion < getCurrentQuestions().length) {
+            loadQuestion(getCurrentQuestions());
+        } else {
+            showResult();
+        }
+    }
+}
+
+function showResult() {
+    const quizContainer = document.querySelector('.quizes');
+    const resultElement = document.createElement('div');
+    resultElement.classList.add('result');
+    const resultContainer=document.createElement("div");
+    resultContainer.innerHTML=`
+    <h3>Result</h3>`;
+    resultElement.append(resultContainer)
+    answers.forEach((answer, index) => {
+        const questionResult = document.createElement('div');
+        questionResult.innerHTML = `
+          <p class="question">Question: ${answer.question}</p>
+             `;
+
+        const choicesElement = document.createElement('div');
+        choicesElement.classList.add('choices');
+
+        getCurrentQuestions()[index]?.choices?.forEach((choice, i) => {
+            const label = document.createElement("label");
+            label.innerHTML = `
+                <input type="radio" name="choice" value="${choice}" ${answer.userAnswer === choice ? 'checked' : ''} disabled>
+                ${choice}
+            `;
+            choicesElement.appendChild(label);
+        });
+
+        questionResult.appendChild(choicesElement);
+        resultElement.appendChild(questionResult);
+        const answerContainer=document.createElement("div");
+        answerContainer.innerHTML=`
+        <p class=${answer.userAnswer === answer.correctAnswer?"correct":"incorrect"}>Your Answer: ${answer.userAnswer}</p>
+        <p>Correct Answer: ${answer.correctAnswer}</p>
+        <p>Time Taken: ${answer.timeTaken} seconds</p>`;
+        answerContainer.style.marginBottom="50px";
+        questionResult.appendChild(answerContainer);
+    });
+
+    quizContainer.innerHTML = '';
+    quizContainer.appendChild(resultElement);
+    // quizContainer.appendChild(correctAnswersElement);
+}
+
+
+
+function getCurrentQuestion() {
+    return getCurrentQuestions()[currentQuestion]?.question;
+}
+
+function getCurrentCorrectAnswer() {
+    return getCurrentQuestions()[currentQuestion]?.correctAnswer;
+}
+
+function getCurrentQuestions() {
+    return chosenQuiz === 'bio' ? bioQuestions : personalQuestions;
+}
+
+$(document).ready(function() {
+    $("#submit").click(function() {
+        checkAnswer();
+    });
 });
