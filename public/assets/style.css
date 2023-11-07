@@ -334,7 +334,101 @@ header.scroll img{
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     text-align: justify;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
+.quizes{
+    width:80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    min-height:500px;
+    padding: 30px;
+}
+.quizes h3{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-size:4.5rem;
+    font-weight: 500;
+    line-height: 5.5rem;
+    
+}
+.quiz-container{
+    width: 50%;
+    height: 100px;
+    margin-bottom: 40px;
+    align-items:center ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    padding:0px 50px 0px 50px;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.user-option {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* font-size: 16px; */
+}
+.question {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+#submit{
+    display: none;
+}
+.choices {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.choices label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.choices input[type="radio"] {
+    margin-right: 10px;
+    height:1.6rem;
+}
+button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.result {
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.result .correct {
+    border: 2px solid #28a745; /* Green border for correct answers */
+    padding: 10px;
+}
+
+.result .incorrect {
+    border: 2px solid #dc3545; /* Red border for incorrect answers */
+    padding: 10px;
+}
+
 .use-cases-img img{
     width: 100%;
     height: 600px;

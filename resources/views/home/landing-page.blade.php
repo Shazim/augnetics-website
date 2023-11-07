@@ -103,31 +103,51 @@
             <h3 data-aos="fade-up" >USE CASES</h3>
 
             <div class="use-cases-slider" id="cases" data-aos="fade-up">
-                <div class="use-cases-slide use-case-flex">
+                <div class="use-cases-slide " data-slide-index="0">
                     <div>Culture</div>
-                    <p class="use-case-para">Augnetics Augmented Reality transforms the cultural experience from a linear narrative into a dynamic, interactive journey. We recognize that traditional methods of experiencing art don't fully capture the artist's multifaceted creative process. Our platform empowers artists to enhance their work with virtual assets, offering audiences a richer, more engaging experience. By transcending physical and budgetary constraints, creators can share their vision in unprecedented ways, fostering a valuable dialogue with their audience. Features like reflective quizzes, minigames, and rewards for interaction, coupled with unique audience insights through meta-data collection, redefine the cultural landscape, forging a growing connection between artists and viewers beyond the conventional. </p>
+                   
            
                 </div>
-                <div class="use-cases-slide use-case-flex"> <div>Education</div>
-                <p class="use-case-para">Augnetics introduces an innovative Augmented Reality (AR) platform tailored for the educational sector, addressing the urgent need for engaging and immersive edu-tech solutions. While some educational institutions have been slow to embrace new technology, Augnetics offers a captivating alternative that resonates with the digital-native generation. Our AR experiences are designed to complement educational curricula across grades, enhancing learning outcomes through interactive elements like puzzles, quizzes, and games. These features, combined with AI-driven data insights and minimal training requirements for educators, make integration seamless. Augnetics not only facilitates a gamified learning environment but also provides valuable analytics for educators through a developing dashboard, promoting customized teaching approaches and a deeper understanding of student engagement.</p>
+                <div class="use-cases-slide " data-slide-index="1"> <div>Education</div>
            
             </div>
-                <div class="use-cases-slide use-case-flex"> <div>Retail</div> 
-                <p class="use-case-para">Augnetics is revolutionizing the retail experience with Augmented Reality (AR), offering customers an immersive way to interact with products. Our AR platform allows visualization of items in real space, fostering confident purchasing decisions and personalizing the shopping journey. For retailers, Augnetics is a gateway to actionable insights, with detailed analytics on consumer preferences shaping inventory and marketing strategies. By enhancing customer service through AR tools and gamifying the shopping experience, we drive brand loyalty and sales. Augnetics isn't just enhancing retail; we're redefining it with an ecosystem designed for the modern consumer and forward-thinking retailer. Join us in shaping the future of retail, where every interaction is an opportunity for engagement and growth.</p>
+                <div class="use-cases-slide " data-slide-index="2"> <div>Retail</div> 
             
             </div>
-                <div class="use-cases-slide use-case-flex"> <div>Entertainment</div>
-                <p class="use-case-para">Augnetics reinvents fan engagement with franchises by leveraging Augmented Reality (AR) technology to offer seamless, enriched interactions with beloved characters and universes. Traditional mediums like comic books, movies, and video games each provide value, but transitioning between them can be disjointed due to their inherent limitations. Augnetics bridges this gap, enhancing the fan experience across physical and digital realms, such as merging the enjoyment of trading card games regardless of the player's location. Our platform not only amplifies the connection with the fantasy world but also introduces features like interactive minigames, luck-based events, digital rewards, and a sophisticated system for managing and trading collectibles. Plus, we provide detailed insights into user engagement, tailoring experiences to fan preferences and activities.</p>
+                <div class="use-cases-slide " data-slide-index="3"> <div>Entertainment</div>
         
             </div>
-            <div class="use-cases-slide use-case-flex"> <div>Interior Design </div>
-                <p class="use-case-para">At Augnetics, we aim to revolutionize the interior design process by addressing the critical bottleneck of iteration, where projects often face delays and budget overruns, risking the client's vision. Our Augmented Reality (AR) platform streamlines this process, enhancing visualization of designs, automating change orders, and offering unique implementation solutions. With features like AR viewing of 3D layouts, job implementation, and project management tools, we enhance efficiency for designers and clients alike. Our goal is to increase project turnover and revenue, improve client retention, and simplify change requests and deadline management. The Augnetics platform is dedicated to reducing misunderstandings, lost time due to miscommunication, and lengthy decision-making, thereby transforming the interior design industry's approach to project execution. </p>
+            <div class="use-cases-slide " data-slide-index="4"> <div>Interior Design </div>
         
             </div>
             </div>
             
 </div>
+<div>
+<p id="slide-content-1" class="use-case-para slide-content">Augnetics Augmented Reality transforms the cultural experience from a linear narrative into a dynamic, interactive journey. We recognize that traditional methods of experiencing art don't fully capture the artist's multifaceted creative process. Our platform empowers artists to enhance their work with virtual assets, offering audiences a richer, more engaging experience. By transcending physical and budgetary constraints, creators can share their vision in unprecedented ways, fostering a valuable dialogue with their audience. Features like reflective quizzes, minigames, and rewards for interaction, coupled with unique audience insights through meta-data collection, redefine the cultural landscape, forging a growing connection between artists and viewers beyond the conventional. </p>
+<p id="slide-content-2" class="use-case-para slide-content">Augnetics introduces an innovative Augmented Reality (AR) platform tailored for the educational sector, addressing the urgent need for engaging and immersive edu-tech solutions. While some educational institutions have been slow to embrace new technology, Augnetics offers a captivating alternative that resonates with the digital-native generation. Our AR experiences are designed to complement educational curricula across grades, enhancing learning outcomes through interactive elements like puzzles, quizzes, and games. These features, combined with AI-driven data insights and minimal training requirements for educators, make integration seamless. Augnetics not only facilitates a gamified learning environment but also provides valuable analytics for educators through a developing dashboard, promoting customized teaching approaches and a deeper understanding of student engagement.</p>
+<p id="slide-content-3" class="use-case-para slide-content">Augnetics is revolutionizing the retail experience with Augmented Reality (AR), offering customers an immersive way to interact with products. Our AR platform allows visualization of items in real space, fostering confident purchasing decisions and personalizing the shopping journey. For retailers, Augnetics is a gateway to actionable insights, with detailed analytics on consumer preferences shaping inventory and marketing strategies. By enhancing customer service through AR tools and gamifying the shopping experience, we drive brand loyalty and sales. Augnetics isn't just enhancing retail; we're redefining it with an ecosystem designed for the modern consumer and forward-thinking retailer. Join us in shaping the future of retail, where every interaction is an opportunity for engagement and growth.</p>
+<p id="slide-content-4" class="use-case-para slide-content">Augnetics reinvents fan engagement with franchises by leveraging Augmented Reality (AR) technology to offer seamless, enriched interactions with beloved characters and universes. Traditional mediums like comic books, movies, and video games each provide value, but transitioning between them can be disjointed due to their inherent limitations. Augnetics bridges this gap, enhancing the fan experience across physical and digital realms, such as merging the enjoyment of trading card games regardless of the player's location. Our platform not only amplifies the connection with the fantasy world but also introduces features like interactive minigames, luck-based events, digital rewards, and a sophisticated system for managing and trading collectibles. Plus, we provide detailed insights into user engagement, tailoring experiences to fan preferences and activities.</p>
+<p id="slide-content-5" class="use-case-para slide-content">At Augnetics, we aim to revolutionize the interior design process by addressing the critical bottleneck of iteration, where projects often face delays and budget overruns, risking the client's vision. Our Augmented Reality (AR) platform streamlines this process, enhancing visualization of designs, automating change orders, and offering unique implementation solutions. With features like AR viewing of 3D layouts, job implementation, and project management tools, we enhance efficiency for designers and clients alike. Our goal is to increase project turnover and revenue, improve client retention, and simplify change requests and deadline management. The Augnetics platform is dedicated to reducing misunderstandings, lost time due to miscommunication, and lengthy decision-making, thereby transforming the interior design industry's approach to project execution. </p>
+
+</div>
         </section>
+        <!-- <section class="wrapper quizes" id="quiz-container">
+            <h3>Quizes</h3>
+            <div class="quiz-container"  >
+            <div>Bio Quiz</div>
+            <div class="user-option" onclick="chooseQuiz('bio')">Start</div>
+            </div>
+            <div class="quiz-container" >
+            <div>computer Quiz</div>
+            <div class="user-option" onclick="chooseQuiz('personal')">Start</div>
+            </div>
+            <div class="question" id="question"></div>
+        <div class="choices" id="choices"></div>
+        <button id="submit">Submit</button>
+        <div class="result" id="result"></div>
+
+        </section> -->
         <section class="contact-us wrapper" id="contactUs">
             <div class="contact-us-container flex">
                 <div class="contact-us-img" data-aos="fade-right">
