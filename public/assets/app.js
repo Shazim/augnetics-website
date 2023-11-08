@@ -238,7 +238,7 @@ function showResult() {
         getCurrentQuestions()[index]?.choices?.forEach((choice, i) => {
             const label = document.createElement("label");
             label.innerHTML = `
-                <input type="radio" name="choice" value="${choice}" ${answer.userAnswer === choice ? 'checked' : ''} disabled>
+               
                 ${choice}
             `;
             choicesElement.appendChild(label);

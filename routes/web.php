@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('home.landing-page');
 });
 
+Route::get('/quiz', 'QuizController@index');
+
 Route::namespace('Home')->group(function () {
     Route::prefix('home')->group(function () {
         Route::post('/contact-us', 'HomeController@contactUs')->name('home.contact-us');
