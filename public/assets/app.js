@@ -30,7 +30,12 @@ $(document).ready(function(){
         const currentContent = document.getElementById('slide-content-' + (slideIndex + 1));
         if (currentContent) {
           currentContent.style.display = 'block';
+          const contentValue = currentContent.textContent || currentContent.innerText;
+
+$('#contentInput').val(contentValue);
         }
+       const value =document.getElementById('contentInput').value
+       console.log("VALUE",value) 
       }
     // Accordion
     if($accordion.length){

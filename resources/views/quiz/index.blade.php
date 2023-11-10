@@ -15,7 +15,7 @@
     </head>
     <body>
 
-    <header id="header" >
+    <header class="scroll">
         <div data-aos="zoom-in" data-aos-duration="1000" class="flex-center">
             <img src="{{ asset('public/assets/images/logo.png') }}" alt="logo"  />
         </div>

@@ -347,6 +347,9 @@ header.scroll img{
     min-height:500px;
     padding: 30px;
 }
+.hidden{
+    display: none;
+}
 .quizes h3{
     display: flex;
     justify-content: center;
