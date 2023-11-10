@@ -120,40 +120,82 @@ $('#contentInput').val(contentValue);
 });
 const bioQuestions = [
     {
-        question: "What is the capital of France?",
-        choices: ["London", "Madrid", "Paris", "Berlin"],
-        correctAnswer: "Paris"
+        question: "What are the primary reactants used by plants during photosynthesis?",
+        choices: ["Oxygen and Sugars", "Carbon Dioxide and Water", "Nitrogen and Oxygen", "Hydrogen and Carbon Dioxide"],
+        correctAnswer: "Carbon Dioxide and Water"
     },
     {
-        question: "Which planet is known as the Red Planet?",
-        choices: ["Mars", "Venus", "Jupiter", "Saturn"],
-        correctAnswer: "Mars"
+        question: "The process of photosynthesis is described as an endothermic reaction. What does this imply about the energy required for the process?",
+        choices: ["Energy is neither released nor absorbed during the process.", "Energy is released during the process.", "Energy is absorbed from the surroundings during the process.", "The energy remains constant throughout the process."],
+        correctAnswer: "Energy is absorbed from the surroundings during the process."
     },
     {
-        question: "What is 2 + 2?",
-        choices: ["3", "4", "5", "6"],
-        correctAnswer: "4"
+        question: "What is the primary function of chloroplasts in plant cells?",
+        choices: ["DNA replication", "Protein synthesis", "Cellular respiration", "Photosynthesis"],
+        correctAnswer: "Photosynthesis"
+    },
+    {
+        question: "Which pigment, responsible for capturing light energy, is predominantly found in chloroplasts?",
+        choices: ["Hemoglobin", "Melanin", "Rhodopsin", "Chlorophyll"],
+        correctAnswer: "Chlorophyll"
+    },
+    {
+        question: "In which part of the chloroplast does the Calvin cycle, a phase of photosynthesis, primarily take place?",
+        choices: ["Thylakoid membrane", "Stroma", "Granum", "Outer membrane"],
+        correctAnswer: "Stroma"
     }
 ];
 
-const personalQuestions = [
+const englishQuestions = [
     {
-        question: "What is your favorite color?",
-        choices: ["Red", "Blue", "Green", "Yellow"],
-        correctAnswer: "" // Add user-specific correct answer here
+        question: "In the first stanza, what do the yellow leaves signify?",
+        choices: [
+            "Autumn ",
+            "The poet's favorite color",
+            "A unique species of tree",
+            "A fantasy world where trees are yellow"
+        ]
     },
     {
-        question: "What is your favorite animal?",
-        choices: ["Dog", "Cat", "Bird", "Fish"],
-        correctAnswer: "" // Add user-specific correct answer here
+        question: "In the second stanza, when the poet describes the path as 'Had worn them really about the same'. Considering other elements of the poem, what can you say about the paths?",
+        choices: [
+            "They are equally worn out with travelers",
+            "They are equally untraveled. ",
+            "Only one road exists and the other is an illusion"
+        ]
     },
     {
-        question: "What is your hometown?",
-        choices: ["New York", "Los Angeles", "Chicago", "Other"],
-        correctAnswer: "" // Add user-specific correct answer here
+        question: "How does the tone change between the first two stanzas and the last two?",
+        choices: [
+            "From cheerful to dramatic",
+            "From dramatic to cheerful",
+            "From cheerful to lamenting "
+        ]
     }
+    // Add more questions as needed
 ];
 
+const criticalThinkingQuestions = [
+    {
+        question: "What decision do you think should be taken: ",
+        choices: [
+            {
+                option: "The business decision to go ahead with the railway and make provisions for the rainforest.",
+                feedback: "The rainforest has been permanently altered, the railway now passes through the town and brought business and prosperity to the townspeople. Ecologists have noticed that some species have stopped appearing in the rainforest.",
+            },
+            {
+                option: "The decision to cancel the project and maintain the ecology of he rainforest.",
+                feedback: "The rainforest has remained untouched and so does the village. The rainforest bursts with a variety of sounds and colours of all the flora and fauna thriving while the village shrinks as young people leave for better opportunities.",
+            },
+            {
+                option: "The decision to move the railway out of the way of the rainforest and provide the townspeople opportunity to work out of their town.  ",
+                feedback: "The project is budgeted and fails to receive approval to go ahead with the new plan. The rainforest is unaffected but the village and all other villages who were alongside the planned railroad have lost their opportunity for economic progression.",
+            },
+           
+        ]
+    },
+    // Add more critical thinking questions as needed
+];
 let currentQuestion = 0;
 let score = 0;
 let startTime;
@@ -171,10 +213,220 @@ function chooseQuiz(quizType) {
 
     if (quizType === 'bio') {
         loadQuestion(bioQuestions);
-    } else if (quizType === 'personal') {
-        loadQuestion(personalQuestions);
+    } else if (quizType === 'english') {
+        loadEnglishQuestion(englishQuestions);
+    }
+    else if (quizType === 'criticalThinking') {
+        loadCriticalQuestion(criticalThinkingQuestions);
     }
 }
+function loadCriticalQuestion(questions) {
+    const questionElement = document.getElementById("question");
+    const choicesElement = document.getElementById("choices");
+    const submit = document.getElementById("submit").style.display = "block"
+    questionElement.textContent = questions[currentQuestion].question;
+    choicesElement.innerHTML = "";
+
+    questions[currentQuestion].choices.forEach((choice, index) => {
+        const label = document.createElement("label");
+        label.innerHTML = `
+            <input type="radio" name="choice" value="${choice.option}" >
+            <span>${choice.option}</span>
+        `;
+
+        choicesElement.appendChild(label);
+    });
+
+    startTime = new Date(); // Start the timer
+}
+
+function checkCriticalAnswer() {
+    const selectedChoice = document.querySelector('input[name="choice"]:checked');
+    
+    if (selectedChoice) {
+        const userAnswer = selectedChoice.value;
+       
+        const endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000; // Calculate time in seconds
+console.log(getCriticalCurrentQuestion())
+        answers.push({
+            question: getCriticalCurrentQuestion(),
+            userAnswer,
+            timeTaken
+        });
+
+        currentQuestion++;
+        if (currentQuestion < getCriticalCurrentQuestions().length) {
+            loadCriticalQuestion(getCriticalCurrentQuestions());
+        } else {
+            showCriticalResult();
+        }
+    }
+}
+function showCriticalResult() {
+    const resultContainer = document.querySelector('.quizes');
+    resultContainer.innerHTML = ' <h3>Result</h3`'; // Clear previous content
+
+    answers.forEach((answer, index) => {
+        const questionResult = document.createElement('div');
+        questionResult.innerHTML = `
+          <p class="question">Question: ${answer.question}</p>
+             `;
+
+        const choicesElement = document.createElement('div');
+        choicesElement.classList.add('choices');
+
+        getCriticalCurrentQuestions()[index]?.choices?.forEach((choice, i) => {
+            const label = document.createElement("label");
+            label.innerHTML = `
+                <input type="radio" name="choice" value="${choice.option}" disabled ${choice.option === answer.userAnswer ? 'checked' : ''}>
+                ${choice.option}
+            `;
+            choicesElement.appendChild(label);
+        });
+
+        questionResult.appendChild(choicesElement);
+
+        const feedbackContainer = document.createElement("div");
+        feedbackContainer.innerHTML = `
+        <h1> Feedback:</h1>
+            <p class="feedback feedback-bold"> ${getCriticalFeedback(answer.userAnswer)}</p>
+            <p class="time-taken">Time Taken: ${answer.timeTaken} seconds</p>`;
+        feedbackContainer.style.marginBottom = "50px";
+        feedbackContainer.classList.add("answer-container")
+        questionResult.appendChild(feedbackContainer);
+
+        resultContainer.appendChild(questionResult);
+    });
+}
+
+function getCriticalFeedback(userAnswer) {
+    const currentChoices = getCriticalCurrentQuestions()?.[0]?.choices;
+    
+    const selectedChoice = currentChoices?.find(choice => choice.option === userAnswer);
+
+    if (selectedChoice) {
+        return selectedChoice.feedback;
+    } else {
+        return 'Invalid option selected';
+    }
+}
+function getCriticalCurrentQuestion() {
+    return getCriticalCurrentQuestions()[currentQuestion]?.question;
+}
+
+function getCriticalCurrentQuestions() {
+    return chosenQuiz === 'criticalThinking' ? criticalThinkingQuestions : [];
+}
+
+
+
+
+
+function loadEnglishQuestion(questions) {
+    const questionElement = document.getElementById("question");
+    const choicesElement = document.getElementById("choices");
+    const submit = document.getElementById("submit").style.display = "block"
+    questionElement.textContent = questions[currentQuestion].question;
+    choicesElement.innerHTML = "";
+
+    questions[currentQuestion].choices.forEach((choice, index) => {
+        const label = document.createElement("label");
+        label.innerHTML = `
+            <input type="radio" name="choice" value="${choice}" >
+            <span>${choice}</span>
+        `;
+
+        choicesElement.appendChild(label);
+    });
+
+    startTime = new Date(); // Start the timer
+}
+
+function checkEnglishAnswer() {
+    const selectedChoice = document.querySelector('input[name="choice"]:checked');
+
+    if (selectedChoice) {
+        const userAnswer = selectedChoice.value;
+
+        const endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000; // Calculate time in seconds
+
+        answers.push({
+            question: getEngishCurrentQuestion(),
+            userAnswer,
+            timeTaken
+        });
+
+        currentQuestion++;
+        if (currentQuestion < getEngishCurrentQuestions().length) {
+            loadEnglishQuestion(getEngishCurrentQuestions());
+        } else {
+            showEngishResult();
+        }
+    }
+}
+
+function showEngishResult() {
+    const quizContainer = document.querySelector('.quizes');
+    const resultElement = document.createElement('div');
+    resultElement.classList.add('result');
+    const resultContainer = document.createElement("div");
+    resultContainer.innerHTML = `
+    <h3>Result</h3>`;
+    resultElement.append(resultContainer)
+    answers.forEach((answer, index) => {
+        const questionResult = document.createElement('div');
+        questionResult.innerHTML = `
+          <p class="question">Question: ${answer.question}</p>
+             `;
+
+        const choicesElement = document.createElement('div');
+        choicesElement.classList.add('choices');
+
+        getEngishCurrentQuestions()[index]?.choices?.forEach((choice, i) => {
+            const label = document.createElement("label");
+            label.innerHTML = `
+                
+                ${choice}
+            `;
+            choicesElement.appendChild(label);
+        });
+
+        questionResult.appendChild(choicesElement);
+        resultElement.appendChild(questionResult);
+
+        const feedbackContainer = document.createElement("div");
+        feedbackContainer.innerHTML = `
+            <p class="feedback feedback-bold">Your Answer: ${getEngishFeedback(answer.userAnswer)}</p>
+            <p class="feedback-bold time-taken">Time Taken: ${answer.timeTaken} seconds</p>`;
+        feedbackContainer.style.marginBottom = "50px";
+        feedbackContainer.classList.add("answer-container")
+        questionResult.appendChild(feedbackContainer);
+    });
+
+    quizContainer.innerHTML = '';
+    quizContainer.appendChild(resultElement);
+}
+
+function getEngishFeedback(userAnswer) {
+    // Provide feedback based on the user's selected option
+    return `Your selected option "${userAnswer}" is correct.`;
+}
+
+function getEngishCurrentQuestion() {
+    return getEngishCurrentQuestions()[currentQuestion]?.question;
+}
+
+function getEngishCurrentQuestions() {
+    return chosenQuiz === 'english' ? englishQuestions : [];
+}
+
+
+
+
+
+
 
 function loadQuestion(questions) {
     const questionElement = document.getElementById("question");
@@ -253,10 +505,11 @@ function showResult() {
         resultElement.appendChild(questionResult);
         const answerContainer=document.createElement("div");
         answerContainer.innerHTML=`
-        <p class=${answer.userAnswer === answer.correctAnswer?"correct":"incorrect"}>Your Answer: ${answer.userAnswer}</p>
-        <p>Correct Answer: ${answer.correctAnswer}</p>
-        <p>Time Taken: ${answer.timeTaken} seconds</p>`;
+        <p class=${answer.userAnswer === answer.correctAnswer?"correct":"incorrect"}><span class="feedback">Your Answer: <span class="feedback-bold"> ${answer.userAnswer}</span></span></p>
+        <p class="feedback">Correct Answer: <span class="feedback-bold">${answer.correctAnswer}</span></p>
+        <p class="time-taken">Time Taken: ${answer.timeTaken} seconds</p>`;
         answerContainer.style.marginBottom="50px";
+       answerContainer.classList.add("answer-container")
         questionResult.appendChild(answerContainer);
     });
 
@@ -276,11 +529,17 @@ function getCurrentCorrectAnswer() {
 }
 
 function getCurrentQuestions() {
-    return chosenQuiz === 'bio' ? bioQuestions : personalQuestions;
+    return chosenQuiz === 'bio'&& bioQuestions ;
 }
 
 $(document).ready(function() {
     $("#submit").click(function() {
-        checkAnswer();
+        if(chosenQuiz==="bio"){checkAnswer()}
+        else if(chosenQuiz==="english"){
+            checkEnglishAnswer()
+        }
+        else if(chosenQuiz==='criticalThinking'){
+            checkCriticalAnswer()
+        }
     });
 });

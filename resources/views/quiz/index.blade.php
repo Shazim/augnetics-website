@@ -28,12 +28,16 @@
         <section class="wrapper quizes" id="quiz-container">
             <h3>Quizes</h3>
             <div class="quiz-container"  >
-            <div>Bio Quiz</div>
+            <div>Biology Quiz</div>
             <div class="user-option" onclick="chooseQuiz('bio')">Start</div>
             </div>
             <div class="quiz-container" >
-            <div>computer Quiz</div>
-            <div class="user-option" onclick="chooseQuiz('personal')">Start</div>
+            <div>critical Thinking Quiz</div>
+            <div class="user-option" onclick="chooseQuiz('criticalThinking')">Start</div>
+            </div>
+            <div class="quiz-container" >
+            <div>English Quiz</div>
+            <div class="user-option" onclick="chooseQuiz('english')">Start</div>
             </div>
             <div class="question" id="question"></div>
         <div class="choices" id="choices"></div>
