@@ -209,6 +209,11 @@
                                 @enderror
                             </span>
                         </div>
+                        <div class="field-row hidden">
+                            <textarea name="slide-type" placeholder="Message (Optional)" id="contentInput"  ></textarea>
+                          
+                        </div>
+
                     </div>
                     <div class="flex">
                         <button type="submit">Send Message</button>
