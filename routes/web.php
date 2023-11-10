@@ -19,6 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/quiz', 'QuizController@index');
+Route::get('/3d', function () {
+    return view('home.3d');
+});
 
 Route::namespace('Home')->group(function () {
     Route::prefix('home')->group(function () {

@@ -17,7 +17,7 @@
 
     <header id="header" >
         <div data-aos="zoom-in" data-aos-duration="1000" class="flex-center">
-            <img src="{{ asset('public/assets/images/logo.png') }}" alt="logo"  />
+            <a href="/"><img src="{{ asset('public/assets/images/logo.png') }}" alt="logo"  /></a>
         </div>
     </header>
 

@@ -496,7 +496,7 @@ function showResult() {
             const label = document.createElement("label");
             label.innerHTML = `
                
-                ${choice}
+                - ${choice}
             `;
             choicesElement.appendChild(label);
         });

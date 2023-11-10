@@ -17,7 +17,7 @@
 
     <header class="scroll">
         <div data-aos="zoom-in" data-aos-duration="1000" class="flex-center">
-            <img src="{{ asset('public/assets/images/logo.png') }}" alt="logo"  />
+            <a href="/"><img src="{{ asset('public/assets/images/logo.png') }}" alt="logo"  /></a>
         </div>
     </header>
 
@@ -28,15 +28,15 @@
         <section class="wrapper quizes" id="quiz-container">
             <h3>Quizes</h3>
             <div class="quiz-container"  >
-            <div>Biology Quiz</div>
+            <div>Biology</div>
             <div class="user-option" onclick="chooseQuiz('bio')">Start</div>
             </div>
             <div class="quiz-container" >
-            <div>critical Thinking Quiz</div>
+            <div>Critical Thinking</div>
             <div class="user-option" onclick="chooseQuiz('criticalThinking')">Start</div>
             </div>
             <div class="quiz-container" >
-            <div>English Quiz</div>
+            <div>English</div>
             <div class="user-option" onclick="chooseQuiz('english')">Start</div>
             </div>
             <div class="question" id="question"></div>
