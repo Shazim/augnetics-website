@@ -41,7 +41,7 @@
 
             </div>
         </section>
-        <section class="about">
+        <section class="about"> 
             <div class="flex">
                 <div  class="about-content">
                     <div class="about-content-container">
@@ -61,6 +61,25 @@
                 </div>
                 <div  class="about-img flex" data-aos="fade-left" data-aos-duration="1000">
                     <img src="{{ asset('public/assets/images/about.jpg') }}"/>
+                </div>
+            </div>
+        </section>
+        <section class="team">
+            <h2>A team of Blue-Sky Makers</h2>
+            <div class="flex">
+                <div class="team-block" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="{{ asset('public/assets/images/omran.jpg') }}">
+                    <span class="title">Omran Alblooshi</span>
+                    <span class="designation">CTO</span>
+                    <span class="description">Computer Engineering background with projects completed in environmental tech and process optimisation</span>
+                    <span class="email">Email: <a href="mailto:Omran@augnetics.ai">Omran@augnetics.ai</a></span>
+                </div>
+                <div class="team-block" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="{{ asset('public/assets/images/yousaf.jpg') }}">
+                    <span class="title">Yousuf Alghurair</span>
+                    <span class="designation">CEO</span>
+                    <span class="description">Electrical and Electronic Engineering background and has completed projects in manufacturing and investment.</span>
+                    <span class="email">Email: <a href="mailto:Yousaf@augnetics.ai">Yousaf@augnetics.ai</a></span>
                 </div>
             </div>
         </section>

@@ -236,6 +236,79 @@ header.scroll img{
     border-radius: 20px;
 }
 
+.team {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px  0;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.team h2 {
+    text-align: center;
+    font-family: 'PPFormula', sans-serif;
+    margin: 0 0 50px 0;
+    text-align: center;
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+    font-weight: 500;
+}
+
+.team .flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team .team-block {
+    text-align: center;
+}
+
+.team .team-block img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.team .team-block span {
+    display: block;
+}
+
+.team-block .title {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    font-family: 'Matter-Regular', sans-serif;
+}
+
+.team-block .designation {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    margin-top: 10px;
+    font-family: 'Matter-Regular', sans-serif;
+
+}
+
+.team-block .description {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.team-block .email {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
 .services{
     color: #ffffff;
     background-color: #000000;
@@ -774,6 +847,16 @@ footer a:hover{
     }
     .banner-heading span:nth-child(3){
         margin-left: 50vw;
+    }
+
+    .team .flex {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .team .team-block {
+        margin-top: 20px;
     }
 
     .about {
