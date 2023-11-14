@@ -35,6 +35,7 @@ class ContactUs extends Mailable
             ->with([
                 'senderName' => $this->mailData[NAME],
                 'senderEmail' => $this->mailData[EMAIL],
+                'senderUseCase' => $this->mailData[USECASE],
                 'senderOccupation' => $this->mailData[OCCUPATION],
                 'senderMessage' => $this->mailData[MESSAGE],
                 'logo' => asset('icons/shoof-logo-180x180.png'),

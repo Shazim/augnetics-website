@@ -9,5 +9,6 @@
 
 define('NAME', 'name');
 define('OCCUPATION', 'occupation');
+define('USECASE', 'usecase');
 define('EMAIL', 'email');
 define('MESSAGE', 'message');

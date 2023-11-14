@@ -15,6 +15,9 @@
                 Occupation: {{ $senderOccupation }}
             </p>
             <p>
+                UseCase: {{ $senderUseCase }}
+            </p>
+            <p>
                 Email: {{ $senderEmail }}
             </p>
             <p>

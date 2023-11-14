@@ -26,6 +26,7 @@ class ContactUsForm extends FormRequest
         return [
             NAME => 'required|max:50',
             OCCUPATION => 'required|max:50',
+            USECASE => 'required|max:50',
             EMAIL => 'required|email',
             MESSAGE => 'nullable|max:500'
         ];

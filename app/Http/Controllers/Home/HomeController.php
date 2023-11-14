@@ -22,6 +22,7 @@ class HomeController extends Controller
             $data = [
                 NAME => request(NAME),
                 OCCUPATION => request(OCCUPATION),
+                USECASE => request(USECASE),
                 EMAIL => request(EMAIL),
                 MESSAGE => request(MESSAGE)
             ];
